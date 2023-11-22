@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psitkin <psitkin@hive.student.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:14:35 by psitkin           #+#    #+#             */
-/*   Updated: 2023/11/20 17:56:50 by psitkin          ###   ########.fr       */
+/*   Created: 2023/11/18 18:32:54 by psitkin           #+#    #+#             */
+/*   Updated: 2023/11/19 15:04:03 by psitkin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if ((ft_isdigit(c) == 1) || (ft_isalpha(c) == 1))
-		return (1);
-	return (0);
+	t_list	*lastlast;
+
+	lastlast = *lst;
+	if (!lastlast)
+	{
+		*lst = new;
+		return ;
+	}
+	lastlast = ft_lstlast(lastlast);
+	lastlast -> next = new;
 }

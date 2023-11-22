@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psitkin <psitkin@hive.student.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:14:35 by psitkin           #+#    #+#             */
-/*   Updated: 2023/11/20 17:56:50 by psitkin          ###   ########.fr       */
+/*   Created: 2023/10/29 19:15:49 by psitkin           #+#    #+#             */
+/*   Updated: 2023/11/19 19:56:34 by psitkin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	if ((ft_isdigit(c) == 1) || (ft_isalpha(c) == 1))
-		return (1);
+	size_t	i;
+
+	i = 0;
+	while (i < n && (s1[i] || s2[i]))
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+			return ((unsigned char) s1[i] - (unsigned char) s2[i]);
+	}
 	return (0);
 }

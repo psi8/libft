@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psitkin <psitkin@hive.student.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 19:14:35 by psitkin           #+#    #+#             */
-/*   Updated: 2023/11/20 17:56:50 by psitkin          ###   ########.fr       */
+/*   Created: 2023/10/31 23:23:55 by psitkin           #+#    #+#             */
+/*   Updated: 2023/11/19 19:56:14 by psitkin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize)
 {
-	if ((ft_isdigit(c) == 1) || (ft_isalpha(c) == 1))
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	src_len;
+
+	i = 0;
+	src_len = ft_strlen(src);
+	if (dstsize > 0)
+	{
+		while (src[i] && i < (dstsize - 1))
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	while (src[src_len] != 0)
+		return (src_len);
+	return (src_len);
 }

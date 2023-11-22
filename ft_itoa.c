@@ -6,13 +6,13 @@
 /*   By: psitkin <psitkin@hive.student.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:12:48 by psitkin           #+#    #+#             */
-/*   Updated: 2023/11/18 01:43:25 by psitkin          ###   ########.fr       */
+/*   Updated: 2023/11/19 20:19:57 by psitkin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_len(int n)
+static int	ft_len(int n)
 {
 	size_t	i;
 
@@ -27,7 +27,7 @@ int	ft_len(int n)
 	return (i);
 }
 
-char	*ft_null(size_t n, char *new)
+static char	*ft_null(size_t n, char *new)
 {
 	if (n == 0)
 	{
